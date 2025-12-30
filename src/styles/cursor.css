@@ -1,0 +1,19 @@
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9999;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (hover: none) {
+    .custom-cursor {
+        display: none;
+    }
+}

@@ -1,0 +1,175 @@
+/* Adding to productgrid.css */
+.card-likes {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+.product-section {
+    padding: var(--spacing-lg) 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-white);
+    padding-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.view-all-btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Grid Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 400px);
+    gap: 20px;
+}
+
+/* Spans for Bento Effect */
+.col-span-1 {
+    grid-column: span 1;
+}
+
+.col-span-2 {
+    grid-column: span 2;
+}
+
+.row-span-1 {
+    grid-row: span 1;
+}
+
+.row-span-2 {
+    grid-row: span 2;
+}
+
+/* Product Card */
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-image-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background-color: #1a1a1a;
+    cursor: pointer;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* transition handled by framer motion now, but keeping backup */
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.add-to-cart {
+    background: var(--color-signal-red);
+    color: var(--color-white);
+    padding: 10px 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.card-info {
+    padding-top: 1rem;
+}
+
+.info-top {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+}
+
+.product-category {
+    font-size: 0.8rem;
+    color: #999;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .col-span-2 {
+        grid-column: span 2;
+    }
+
+    .row-span-2 {
+        grid-row: span 1;
+        height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .col-span-2 {
+        grid-column: span 1;
+    }
+
+    .section-header h2 {
+        font-size: 3rem;
+    }
+}

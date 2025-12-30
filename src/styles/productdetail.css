@@ -1,0 +1,243 @@
+/* content of productdetail.css */
+.product-detail-container {
+    display: flex;
+    padding-top: 80px;
+    /* Navbar space */
+    min-height: 120vh;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Left Column - Title & Size Chart */
+.pd-left {
+    width: 25%;
+    padding: 40px;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+.pd-title {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.size-chart-table {
+    width: 100%;
+    font-family: 'Courier New', monospace;
+    /* Monospace for tech aesthetic */
+    font-size: 0.8rem;
+    color: #888;
+    border-collapse: collapse;
+}
+
+.size-chart-table th,
+.size-chart-table td {
+    text-align: left;
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+}
+
+.size-chart-table th {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Center Column - Image Stack */
+.pd-center {
+    width: 45%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pd-image {
+    width: 100%;
+}
+
+.pd-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Right Column - Purchase Info */
+.pd-right {
+    width: 30%;
+    padding: 40px;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pd-price {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    color: var(--color-signal-red);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.pd-option-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 700;
+}
+
+.size-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.size-btn {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #fff;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+}
+
+.size-btn:hover,
+.size-btn.active {
+    background: var(--color-signal-red);
+    border-color: var(--color-signal-red);
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--color-signal-red);
+    color: #fff;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: background 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background: #cc0000;
+}
+
+.pd-description {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #aaa;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.pd-material-list {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    list-style: disc;
+    padding-left: 20px;
+    color: #aaa;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 40px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-title {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--color-signal-red);
+    width: 30%;
+}
+
+.faq-list {
+    width: 60%;
+}
+
+.faq-item {
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Goes Well With */
+.goes-well-section {
+    padding: 40px;
+}
+
+.goes-well-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.goes-well-title span {
+    font-family: 'Courier New', monospace;
+    /* "With" in cursive/different font in screenshot? I'll use courier or italic body */
+    font-style: italic;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: lowercase;
+}
+
+@media (max-width: 1024px) {
+    .product-detail-container {
+        flex-direction: column;
+    }
+
+    .pd-left,
+    .pd-center,
+    .pd-right {
+        width: 100%;
+        position: static;
+        height: auto;
+    }
+
+    .pd-title {
+        font-size: 3rem;
+    }
+
+    .faq-section {
+        flex-direction: column;
+    }
+
+    .faq-title {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .faq-list {
+        width: 100%;
+    }
+}
